@@ -1,0 +1,26 @@
+-- register on HIOT - need a unique <device_id> even though it's not really a device (or is it...?)
+-- download config (Coordinator, devices to command etc.)
+-- send commands
+-- receive readings
+-- add/remove subscriptions for devices in the commander based on the current view, or high priority items/events
+
+structure
+-- services (MQTT)
+---- auth
+---- mqtt (set up the connection)
+---- status (subscribe, rxjs sense, to this for status updates)
+---- control (publish on this)
+
+
+-- views
+-- controllers
+
+layout
+-- item tree (LHS) - minimised & anchored to top on small screens
+-- device layout based on device type (managed by platform)
+-- use a FAB to open the menu??
+
+notes 
+-- handlers...
+-- send html from platform (controllers and status pages)
+-- 
