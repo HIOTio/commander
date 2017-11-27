@@ -1,7 +1,3 @@
-
-    <ngc-float-button ngDraggable icon="menu">
-        <ngc-float-item-button icon="person_add" content="float item 1"></ngc-float-item-button>
-        <ngc-float-item-button icon="gps_fixed" content="float item 2"></ngc-float-item-button>
-        <ngc-float-item-button icon="mode_edit" content="float item 3"></ngc-float-item-button>
-    </ngc-float-button>
-
+<ngc-float-button ngDraggable icon="menu">
+    <ngc-float-item-button *ngFor="let menuItem of menuItems" icon="{{menuItem.icon}}" content="{{menuItem.text}}" (click)="go(menuItem.url)"></ngc-float-item-button>
+</ngc-float-button>
