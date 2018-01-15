@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { MaterialModule } from './material/material.module';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+
+  isCollapsed: boolean = true;
+
+
   menuItems = [
     {
       url: '/dashboard',
@@ -29,7 +33,11 @@ export class AppComponent {
     }
   ];
   title = 'HIOT Commander';
-  go(url) {
-
+  collapsed(event: any): void {
+  }
+  expanded(event: any): void {
+  }
+  toggleCollapse(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
 }

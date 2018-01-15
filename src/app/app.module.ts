@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularDraggableModule } from 'angular2-draggable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MaterialModule } from './material/material.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CollapseModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { StatusComponent } from './view/status/status.component';
 import { ControlComponent } from './view/control/control.component';
@@ -17,8 +16,8 @@ import { ControlComponent } from './view/control/control.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AngularDraggableModule,
-    MaterialModule
+    NgbModule.forRoot(),
+    CollapseModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
