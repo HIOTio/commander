@@ -15,7 +15,7 @@ export class ToggleLightComponent implements OnInit {
   ngOnInit() {
   }
  sendCommand(topic,command){
-     this.cmd.sendCommand(topic,command,[]).subscribe(data=>{
+     this.cmd.sendCommand(topic,command,{}).subscribe(data=>{
          this.resp=data;
       });
  }
