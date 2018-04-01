@@ -11,7 +11,7 @@ export class CommandService {
     getCommands(): Observable<any> {
         return this._http.get("http://192.168.1.4:3001/cmdList");
     }
-    sendCommand(topic,command,params: JSON): Observable<any>{
+    sendCommand(topic,command,params): Observable<any>{
         return this._http.get("http://192.168.1.4:3001/cmd/" + topic + "/" + command + "/" + JSON.stringify(params));
            
     }
