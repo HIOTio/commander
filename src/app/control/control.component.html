@@ -1,0 +1,6 @@
+<p>
+  Need to create a list of components (toggle light, light on/off, dim etc. and map these back to commands)
+</p>
+<div *ngFor="let command of commands">
+<app-toggle-light [label]="command.desc" [command]="command.id" [topic]="command.topic"></app-toggle-light>
+</div>
