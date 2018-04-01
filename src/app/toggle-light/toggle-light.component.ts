@@ -9,7 +9,6 @@ export class ToggleLightComponent implements OnInit {
 @Input() command;
 @Input() label;
 @Input() topic;
-    topic="1";
     resp:any;
   constructor(private cmd: CommandService) { }
 
