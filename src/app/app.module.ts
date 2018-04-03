@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToggleLightComponent } from './toggle-light/toggle-light.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CommandService } from './command.service';
+import { OnOffSwitchComponent } from './controls/on-off-switch/on-off-switch.component';
 
 const routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const routes = [
         ControlComponent,
         DashboardComponent,
         ToggleLightComponent,
-        SettingsComponent
+        SettingsComponent,
+        OnOffSwitchComponent
     ],
     imports: [
         BrowserModule,

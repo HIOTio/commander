@@ -15,7 +15,7 @@
     </div>
     <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="card card-block card-header">
         <div *ngFor="let item of menuItems">
-            <a class="nav-link" (click)="isCollapsed=true">{{item.text}} <span class="sr-only">(current)</span></a>
+            <a class="nav-link" (click)="isCollapsed=true" [routerLink]="[item.url]">{{item.text}} <span class="sr-only">(current)</span></a>
         </div>
     </div>
     <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="card card-block card-header">

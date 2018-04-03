@@ -14,6 +14,7 @@ export class ControlComponent implements OnInit {
         this.cmdList.getCommands().subscribe( 
             data=>{
                 this.commands=data;
+                console.log(data);
             });
   }
 
