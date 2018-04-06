@@ -6,18 +6,18 @@ import { RouterModule } from '@angular/router';
 import { CollapseModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StatusComponent } from './view/status/status.component';
+import { StatusComponent } from './status/status.component';
 import { ControlComponent } from './control/control.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToggleLightComponent } from './toggle-light/toggle-light.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CommandService } from './command.service';
+import { SettingsService } from './settings.service';
 import { OnOffSwitchComponent } from './controls/on-off-switch/on-off-switch.component';
 
 const routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: AppComponent },
-    { path: 'dashboard', component: DashboardComponent },
+    { path: 'home', component: DashboardComponent },
     { path: 'control', component: ControlComponent },
     { path: 'status', component: StatusComponent },
     { path: 'settings', component: SettingsComponent }];
@@ -40,7 +40,7 @@ const routes = [
         RouterModule.forRoot(routes),
         CollapseModule.forRoot()
     ],
-    providers: [CommandService],
+    providers: [CommandService, SettingsService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

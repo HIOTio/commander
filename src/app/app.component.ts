@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   RouterLink
 } from '@angular/router';
+import {SettingsService } from './settings.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   isCollapsed: boolean = true;
-
+  constructor (private _settingsService: SettingsService ){}
 
   menuItems = [
     {
-      url: '/dashboard',
+      url: '/',
       icon: 'dashboard',
       text: 'Dashboard'
     },
@@ -28,11 +29,6 @@ export class AppComponent {
       url: '/status',
       icon: 'donut_small',
       text: 'Status'
-    },
-    {
-      url: '/settings',
-      icon: 'build',
-      text: 'Settings'
     }
   ];
   title = 'HIOT Commander';
@@ -42,5 +38,8 @@ export class AppComponent {
   }
   toggleCollapse(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+  ngOnInit(){
+    console.log(this._settingsService.getItem("server"));
   }
 }
