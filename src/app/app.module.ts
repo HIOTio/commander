@@ -12,13 +12,14 @@ import {ControlComponent} from './control/control.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ToggleLightComponent} from './controls/toggle-light/toggle-light.component';
 import {SettingsComponent} from './settings/settings.component';
+import { GaugeModule } from 'angular-gauge';
 import {CommandService} from './command.service';
 import {SettingsService} from './settings.service';
 import {OnOffSwitchComponent} from './controls/on-off-switch/on-off-switch.component';
 import { GroupComponent } from './control/group/group.component';
 import { CommandComponent } from './control/command/command.component';
 import { StatusService } from './status.service';
-import { GuageComponent } from './statuses/guage/guage.component';
+import { GaugeComponent } from './statuses/gauge/gauge.component';
 import { ChartComponent } from './statuses/chart/chart.component';
 
 const routes = [
@@ -39,7 +40,7 @@ const routes = [
     OnOffSwitchComponent,
     GroupComponent,
     CommandComponent,
-    GuageComponent,
+    GaugeComponent,
     ChartComponent
   ],
   imports: [
@@ -48,6 +49,7 @@ const routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
+    GaugeModule.forRoot(),
     RouterModule.forRoot(routes),
     CollapseModule.forRoot()
   ],
