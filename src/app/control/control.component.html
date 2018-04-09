@@ -1,11 +1,16 @@
-
-<div *ngFor="let command of commands">
-
-<app-toggle-light *ngIf="command.type=='toggle-light'" [label]="command.desc" [command]="command.id" [topic]="command.topic"></app-toggle-light>
-<app-on-off-switch *ngIf="command.type=='on-off'" [label]="command.desc" [command]="command.id" [topic]="command.topic"></app-on-off-switch>
+<div *ngIf="commands !=null">
+<div *ngFor="let group of commands.groups">
+<div><button class="btn btn-default" (click)="setGroup(group.group)">{{group.name}}</button>
 </div>
-<div>
-repeat for each group
-<div>
-repeat for each element in the group</div>
+</div>
+	
+
+
+<div *ngIf="commands != null">
+
+
+	<div *ngFor="let group of commands.groups">
+		<app-group [group]="group" [commands]="commands.cmds" *ngIf="viewGroup==group.group"> </app-group>
+
+	</div>
 </div>

@@ -1,0 +1,10 @@
+<div *ngIf="command">
+		<app-toggle-light *ngIf="command.type=='toggle-light'"
+			[label]="command.label" [command]="command.cmd"
+			[topic]="command.topic"></app-toggle-light>
+		<app-on-off-switch *ngIf="command.type=='on-off'"
+			[label]="command.label" [command]="command.cmd"
+			[topic]="command.topic"></app-on-off-switch>
+</div>
+
+	

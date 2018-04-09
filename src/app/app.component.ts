@@ -40,6 +40,5 @@ export class AppComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
   ngOnInit(){
-    console.log(this._settingsService.getItem("server"));
   }
 }

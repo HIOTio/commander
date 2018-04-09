@@ -1,3 +1,5 @@
-<p>
-  status works!
-</p>
+<div *ngIf="statuses">
+	<div *ngFor="let status of statuses">
+	<app-guage *ngIf="status.type=='guage'" [status]="status"></app-guage>
+	</div>
+</div>

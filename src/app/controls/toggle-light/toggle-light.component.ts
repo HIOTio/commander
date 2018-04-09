@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CommandService } from '../command.service';
+import { CommandService } from '../../command.service';
 @Component({
   selector: 'app-toggle-light',
   templateUrl: './toggle-light.component.html',

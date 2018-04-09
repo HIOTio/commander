@@ -9,10 +9,10 @@ export class CommandService {
 
     }
     getCommands(): Observable<any> {
-        return this._http.get(this._settingsService.getItem("server") + "/cmdList");
+        return this._http.get(this._settingsService.getItem('server') + '/cmdList');
     }
-    sendCommand(topic,command,params): Observable<any>{
-        return this._http.get(this._settingsService.getItem("server") + "/cmd/" + topic + "/" + command + "/" + JSON.stringify(params));
-           
+    sendCommand(topic, command, params): Observable<any> {
+        return this._http.get(this._settingsService.getItem('server') + '/cmd/' + topic + '/' + command + '/' + JSON.stringify(params));
+
     }
 }
