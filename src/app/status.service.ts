@@ -22,7 +22,6 @@ export class StatusService {
     outText = legendText;
     outText = outText.replace('<degC>', '\xB0C');
     outText = outText.replace('<degF>', '\xB0F');
-    
     return outText;
   }
 }

@@ -11,8 +11,8 @@ import {SettingsService } from './settings.service';
 
 export class AppComponent implements OnInit {
 
-  isCollapsed: boolean = true;
-  constructor (private _settingsService: SettingsService ){}
+  isCollapsed  = true;
+  constructor (private _settingsService: SettingsService ) {}
 
   menuItems = [
     {
@@ -39,6 +39,6 @@ export class AppComponent implements OnInit {
   toggleCollapse(): void {
     this.isCollapsed = !this.isCollapsed;
   }
-  ngOnInit(){
+  ngOnInit() {
   }
 }

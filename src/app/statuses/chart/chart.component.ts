@@ -10,7 +10,7 @@ import {Chart, ChartData, Point} from 'chart.js';
 export class ChartComponent implements OnInit, AfterViewInit {
   canvas: any;
   ctx: any;
-    @Input()
+  @Input()
   status;
   constructor(private _statusService: StatusService) {}
 
@@ -21,7 +21,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.canvas = document.getElementById('chart');
     this.ctx = this.canvas.getContext('2d');
-    let myChart = new Chart(this.ctx, {
+    const myChart = new Chart(this.ctx, {
       type: 'doughnut',
       data: {
         labels: ['min: ' + this.status.min, '18.0', 'max: ' + this.status.max + ' ' + this.status.legend],

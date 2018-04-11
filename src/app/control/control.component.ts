@@ -7,7 +7,7 @@ import {CommandService} from '../command.service';
   styleUrls: ['./control.component.css']
 })
 export class ControlComponent implements OnInit {
-  viewGroup='';
+  viewGroup= '';
   commands: {cmds: [any], groups: any[]};
   resp: any;
     getCommand(group, commandId): void {
@@ -24,7 +24,7 @@ export class ControlComponent implements OnInit {
         this.commands = data;
         this.commands.groups.forEach((group) =>  {
           group.cmds = [];
-          group.commands.forEach((command) =>{
+          group.commands.forEach((command) =>  {
             this.getCommand(group, command);
           });
         });
