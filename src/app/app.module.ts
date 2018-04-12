@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {StatusComponent} from './status/status.component';
 import {ControlComponent} from './control/control.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {ToggleLightComponent} from './controls/toggle-light/toggle-light.component';
+import {ToggleComponent} from './controls/toggle/toggle.component';
 import {SettingsComponent} from './settings/settings.component';
 import { GaugeModule } from 'angular-gauge';
 import {CommandService} from './command.service';
@@ -35,7 +35,7 @@ const routes = [
     StatusComponent,
     ControlComponent,
     DashboardComponent,
-    ToggleLightComponent,
+    ToggleComponent,
     SettingsComponent,
     OnOffSwitchComponent,
     GroupComponent,

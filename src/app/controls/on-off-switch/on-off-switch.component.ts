@@ -8,8 +8,6 @@ import {CommandService} from '../../command.service';
 })
 export class OnOffSwitchComponent implements OnInit {
   @Input() command;
-  @Input() label;
-  @Input() topic;
   resp: any;
   constructor(private _cmd: CommandService) {}
 

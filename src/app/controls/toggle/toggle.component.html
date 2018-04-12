@@ -1,0 +1,8 @@
+
+<div *ngIf="command.parameters">
+	<div class="btn-toolbar" role="toolbar"><span><i class="material-icons grey" >{{command.icon}}</i>{{command.label}} - </span> 
+		<button class="btn btn-default" *ngFor="let parameter of command.parameters" (click)="sendCommand(command.topic,command.command,parameter.value)">{{parameter.text}} 
+	</button>
+	</div>
+
+</div>

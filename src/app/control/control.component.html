@@ -1,17 +1,28 @@
+
 <div *ngIf="commands !=null">
-<div *ngFor="let group of commands.groups">
-<div><button class="btn btn-default" (click)="setGroup(group.group)">{{group.name}}</button>
-</div>
-</div>
-	
+
+	<div class="btn-toolbar" role="toolbar"
+		aria-label="Toolbar with button groups">
+		<div class="btn-group mr-2" role="group" aria-label="Group">
+			<div *ngFor="let group of commands.groups">
+				<button class="btn btn-secondary" (click)="setGroup(group.group)"
+					*ngIf="!group.groups">{{group.name}}</button>
+				&nbsp;
 
 
-<div *ngIf="commands != null">
-
-
-	<div *ngFor="let group of commands.groups">
-		<app-group [group]="group" [commands]="commands.cmds" *ngIf="viewGroup==group.group"> </app-group>
-
+				<div *ngIf="group.groups" ngbDropdown class="d-inline-block">
+					<button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+						{{group.name}}</button>
+					<div ngbDropdownMenu >
+						<button class="dropdown-item"
+							*ngFor="let subGroup of group.groups"  (click)="setGroup(subGroup.group)">{{subGroup.name}}</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
+	<div *ngFor="let group of flatGroups">
+		<app-group [group]="group" [commands]="commands.cmds"
+			*ngIf="viewGroup==group.group"> </app-group>
+	</div>
 </div>

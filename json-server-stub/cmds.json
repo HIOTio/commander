@@ -1,0 +1,297 @@
+{
+	"cmd":{},
+
+	"cmdList":{
+		"cmds":[
+			{
+			"cmd":1,
+					"topic":"2",
+					"command":"1",
+					"label":"Heating",
+					"type":"toggle",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				
+			},
+			
+				{
+				"cmd":2,
+					"topic":"2",
+					"command":"2",
+					"type":"toggle",
+					"label":"Hot Water",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":3,
+					"topic":"3",
+					"command":"1",
+					"type":"on-off",
+					"label":"All Off",
+					"icon":"brightness_low",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":4,
+					"topic":"3",
+					"command":"1",
+					"type":"on-off",
+					"label":"Night-time",
+					"icon":"brightness_medium",
+					"parameters":[
+					]
+				},
+				{
+				"cmd":5,
+					"topic":"1",
+					"command":"1",
+					"type":"toggle",
+					"label":"Main Light",
+					"icon":"lightbulb_outline",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":6,
+					"topic":"1",
+					"command":"2",
+					"type":"toggle",
+					"label":"Spots",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":7,
+					"topic":"1",
+					"command":"3",
+					"type":"toggle",
+					"label":"Plinth Lights",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":8,
+					"topic":"1",
+					"command":"4",
+					"type":"toggle",
+					"label":"Under Cabinet Lights",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":9,
+					"topic":"1",
+					"command":"5",
+					"type":"toggle",
+					"label":"Living Room Spot Lights",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":10,
+					"topic":"1",
+					"command":"6",
+					"type":"toggle",
+					"label":"Living Room Centre Light",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":11,
+					"topic":"1",
+					"command":"7",
+					"type":"toggle",
+					"label":"Internal Porch Light",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				},
+				{
+				"cmd":12,
+					"topic":"1",
+					"command":"8",
+					"type":"toggle",
+					"label":"Outside Porch Light",
+					"icon":"",
+					"parameters":[
+						{
+							"value":"1",
+							"text":"On"
+						},
+						{
+							"value":"2",
+							"text":"Off"
+							
+						}
+					]
+				}
+				
+			
+		],
+		"groups":[
+			{
+				"group":"1",
+					"name":"Heating",
+					"description":"",
+					"icon":"",
+					"commands":[1,2]
+			},
+						{
+				"group":"2",
+					"name":"Lighting Scenes",
+					"description":"",
+					"icon":"",
+					"commands":[3,4]
+					
+			},
+			{
+				"group":"3",
+				"name":"By Room/Area",
+				"description":"group of groups",
+				"icon":"",
+				"commands":[],
+				"groups":[
+					{
+						"group":"4",
+						"name":"Kitchen",
+						"commands":[5,6,7,8]
+					},
+					{
+						"group":"5",
+						"name":"Living Room",
+						"commands":[9,10]
+					},					{
+						"group":"6",
+						"name":"Porch",
+						"commands":[11,12]
+					},					{
+						"group":"7",
+						"name":"Outside",
+						"commands":[12]
+					}
+					
+				]
+			}
+			]
+	},
+	"statusList":[
+		{
+				"type":"gauge___",
+				"value":16.8,
+				"max":50,
+				"min":0,
+				"legend":"<degC>",
+				"title":"Temperature"
+				
+		},{
+				"type":"chart___",
+				"value":16.8,
+				"max":50,
+				"min":0,
+				"legend":"<degC>",
+				"title":"Temperature"
+				
+		},
+		{}
+		
+	]
+}

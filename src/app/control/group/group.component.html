@@ -1,10 +1,7 @@
 
 
 <div *ngIf="group.commands !=null">
-	<div>{{group.name}}
 	<div *ngFor="let cmd of group.cmds">
-	<app-command [command]="cmd">
-	</app-command>
-</div>
+		<app-command [command]="cmd" *ngIf="!group.groups"> </app-command>
 	</div>
 </div>

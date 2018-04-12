@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToggleLightComponent } from './toggle-light.component';
+import { ToggleComponent } from './toggle-light.component';
 
-describe('ToggleLightComponent', () => {
-  let component: ToggleLightComponent;
-  let fixture: ComponentFixture<ToggleLightComponent>;
+describe('ToggleComponent', () => {
+  let component: ToggleLihtComponent;
+  let fixture: ComponentFixture<ToggleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggleLightComponent ]
+      declarations: [ ToggleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToggleLightComponent);
+    fixture = TestBed.createComponent(ToggleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

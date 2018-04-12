@@ -7,11 +7,12 @@ import {CommandService} from '../command.service';
   styleUrls: ['./control.component.css']
 })
 export class ControlComponent implements OnInit {
-  viewGroup= '';
+  viewGroup = '';
+  flatGroups = [];
   commands: {cmds: [any], groups: any[]};
   resp: any;
-    getCommand(group, commandId): void {
-    this.commands.cmds.forEach((cmd) =>  {
+  getCommand(group, commandId): void {
+    this.commands.cmds.forEach((cmd) => {
       if (cmd.cmd === commandId) {
         group.cmds.push(cmd);
       }
@@ -22,15 +23,27 @@ export class ControlComponent implements OnInit {
     this.cmdList.getCommands().subscribe(
       data => {
         this.commands = data;
-        this.commands.groups.forEach((group) =>  {
+        this.commands.groups.forEach((group) => {
+          this.flatGroups.push(group);
           group.cmds = [];
-          group.commands.forEach((command) =>  {
+          if (group.groups) {
+            // iterate through each subgroup
+            group.groups.forEach((subGroup) => {
+                subGroup.cmds = [];
+                this.flatGroups.push(subGroup);
+              subGroup.commands.forEach((command) => {
+                this.getCommand(subGroup, command);
+
+              });
+            });
+          }
+          group.commands.forEach((command) => {
             this.getCommand(group, command);
           });
         });
       });
   }
-    setGroup(group) {
+  setGroup(group) {
     this.viewGroup = group;
   }
 }
