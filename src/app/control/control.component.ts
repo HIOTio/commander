@@ -22,6 +22,7 @@ export class ControlComponent implements OnInit {
   ngOnInit() {
     this.cmdList.getCommands().subscribe(
       data => {
+          console.log(data);
         this.commands = data;
         this.commands.groups.forEach((group) => {
           this.flatGroups.push(group);
