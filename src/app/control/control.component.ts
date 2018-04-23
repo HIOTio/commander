@@ -8,6 +8,7 @@ import {CommandService} from '../command.service';
 })
 export class ControlComponent implements OnInit {
   viewGroup = '';
+  groupName = '';
   flatGroups = [];
   commands: {cmds: [any], groups: any[]};
   resp: any;
@@ -22,7 +23,7 @@ export class ControlComponent implements OnInit {
   ngOnInit() {
     this.cmdList.getCommands().subscribe(
       data => {
-          console.log(data);
+        console.log(data);
         this.commands = data;
         this.commands.groups.forEach((group) => {
           this.flatGroups.push(group);
@@ -30,8 +31,8 @@ export class ControlComponent implements OnInit {
           if (group.groups) {
             // iterate through each subgroup
             group.groups.forEach((subGroup) => {
-                subGroup.cmds = [];
-                this.flatGroups.push(subGroup);
+              subGroup.cmds = [];
+              this.flatGroups.push(subGroup);
               subGroup.commands.forEach((command) => {
                 this.getCommand(subGroup, command);
 
@@ -45,7 +46,8 @@ export class ControlComponent implements OnInit {
       });
   }
   setGroup(group) {
-    this.viewGroup = group;
+    this.viewGroup = group.group;
+    this.groupName = group.name;
   }
 }
 

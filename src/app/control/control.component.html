@@ -5,7 +5,7 @@
 		aria-label="Toolbar with button groups">
 		<div class="btn-group mr-2" role="group" aria-label="Group">
 			<div *ngFor="let group of commands.groups">
-				<button class="btn btn-secondary" (click)="setGroup(group.group)"
+				<button class="btn btn-secondary" (click)="setGroup(group)"
 					*ngIf="!group.groups">{{group.name}}</button>
 				&nbsp;
 
@@ -15,12 +15,15 @@
 						{{group.name}}</button>
 					<div ngbDropdownMenu >
 						<button class="dropdown-item"
-							*ngFor="let subGroup of group.groups"  (click)="setGroup(subGroup.group)">{{subGroup.name}}</button>
+							*ngFor="let subGroup of group.groups"  (click)="setGroup(subGroup)">{{subGroup.name}}</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div *ngIf="groupName">
+{{groupName}}
+</div>
 	<div *ngFor="let group of flatGroups">
 		<app-group [group]="group" [commands]="commands.cmds"
 			*ngIf="viewGroup==group.group"> </app-group>
